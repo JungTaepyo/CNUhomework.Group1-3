@@ -251,6 +251,10 @@ public class Blackjack implements Serializable {
             System.out.println("Dealer wins, " + dealerHand.getBlackjackValue() + " points to "
                     + userHand.getBlackjackValue() + ".");
             return false;
+        }else {
+            System.out.println(
+                    "You win, " + userHand.getBlackjackValue() + " points to " + dealerHand.getBlackjackValue() + ".");
+            return true;
         }
         return true;
     }
