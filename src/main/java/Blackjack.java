@@ -242,6 +242,12 @@ public class Blackjack implements Serializable {
             }
         }
         System.out.println("Dealer's total is " + dealerHand.getBlackjackValue());
+
+        System.out.println();
+        if (dealerHand.getBlackjackValue() == userHand.getBlackjackValue()) {
+            System.out.println("Dealer wins on a tie.  You lose.");
+            return false;
+        }
         return true;
     }
 
