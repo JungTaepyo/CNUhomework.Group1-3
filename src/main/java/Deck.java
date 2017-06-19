@@ -40,6 +40,10 @@ public class Deck implements Serializable {
         // 덱에서 카드 하나를 리턴하는 함수
         Card returnCard = null;
         //shuffle
+        if(cardsUsed == 52){
+            shuffle();
+        }
+        cardsUsed++;
         returnCard=deck[cardsUsed -1];
         return returnCard;
     }
