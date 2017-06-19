@@ -41,5 +41,9 @@ public class CardTest {
         assertThat(firstCard.getValueAsString()=="1");
     }
 
+    @Test
+    public void toString_테스트(){
+    }
+
 
 }
