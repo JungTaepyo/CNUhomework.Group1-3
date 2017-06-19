@@ -6,7 +6,7 @@ import java.util.Vector;
 public class Hand {
     private Vector hand;
 
-    public Hand(){
+    public Hand() {
         hand = new Vector();
     }
 
@@ -76,7 +76,7 @@ public class Hand {
         }
     }
 
-    public String toString(){
+    public String toString() {
         return "";
 
     }
