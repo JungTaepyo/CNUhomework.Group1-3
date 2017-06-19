@@ -11,7 +11,7 @@ public class BlackjackHand extends Hand implements Serializable {
         boolean ace = false; // 손에 에이스가 있으면 true로 설정됩니다
         cards = getCardCount();
 
-        for (int i = 0; i < cards; i++) {
+        for (int i = 0; i < cards; i++) {// i 번째 카드의 값을 손에 넣는다.
             Card card;
             int cardVal;
             card = getCard(i);
@@ -19,8 +19,11 @@ public class BlackjackHand extends Hand implements Serializable {
             if (cardVal == 1) {
                 ace = true;
             }
+            if (cardVal > 10) {
+                cardVal = 10;
+            }
         }
-        if (ace == true){
+        if (ace == true) {
             value = 1;
         }
         return value;
