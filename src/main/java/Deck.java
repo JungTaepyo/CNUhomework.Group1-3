@@ -11,7 +11,7 @@ public class Deck implements Serializable {
         // create unshuffled cards deck
         deck = new Card[52];
         int cardCount = 0; // Cards that have been used
-        for(int suit = 0; suit <= 3; suit++){ //
+        for(int suit = 0; suit <= 3; suit++){ // Create each Suits
             for(int value = 0; value <= 13; value++){
 
             }
