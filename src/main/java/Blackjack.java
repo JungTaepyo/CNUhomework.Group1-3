@@ -156,31 +156,33 @@ public class Blackjack implements Serializable {
             userHand = new BlackjackHand();
             deck.shuffle();
         }
-        dealerHand.addCard(deck.dealCard());
-        dealerHand.addCard(deck.dealCard());
-        userHand.addCard(deck.dealCard());
-        userHand.addCard(deck.dealCard());
+        DealCard(dealerHand,userHand,deck);
 
         if(dealerHand.getBlackjackValue() == 21){
-
+            Blackjack_CardInfo(dealerHand,userHand);
             System.out.println("Dealer is BlackJack, Dealer win");
             return false;
         }
         if(userHand.getBlackjackValue() == 21){
-
+            Blackjack_CardInfo(dealerHand,userHand);
             System.out.println("You are BlackJack, You win");
             return true;
         }
 
         while(true){
             Scanner scan = new Scanner(System.in);
-            for(int i = 0; i < userHand.getCardCount(); i++) {
+
+            for(int i = 0; i < userHand.getCardCount(); i++)
                 System.out.println(userHand.getCard(i) + "      ");
-            }
+
             System.out.println("Your total is "+userHand.getBlackjackValue());
+            System.out.println();
             System.out.println("Dealer is showing the "+dealerHand.getCard(0));
+            System.out.println();
             System.out.println("Hit (1), Stand(2) or Store & Quit(3) ? ");
+
             int userAction;
+
             do{
                 userAction = scan.nextInt();
                 if(userAction != 1 && userAction != 2 && userAction != 3){
@@ -188,8 +190,23 @@ public class Blackjack implements Serializable {
                 }
             }while(userAction != 1 && userAction != 2 && userAction != 3);
 
+
+
+
             break;
         }
         return true;
+    }
+
+    private static void DealCard(BlackjackHand dealerHand, BlackjackHand userHand,Deck deck) {
+        dealerHand.addCard(deck.dealCard());
+        dealerHand.addCard(deck.dealCard());
+        userHand.addCard(deck.dealCard());
+        userHand.addCard(deck.dealCard());
+    }
+
+    private static void Blackjack_CardInfo(BlackjackHand dealerHand, BlackjackHand userHand){
+        System.out.println("Dealer has the "+ dealerHand.getCard(0) +" and the "+dealerHand.getCard(1));
+        System.out.println("User has the "+ userHand.getCard(0) +" and the "+userHand.getCard(1));
     }
 }

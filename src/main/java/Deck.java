@@ -1,10 +1,14 @@
 
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.io.Serializable;
 
 /**
  * Created by user on 2017-06-19.
  */
-
+@Data
 public class Deck implements Serializable {
 
     private Card[] deck; //create deck
@@ -52,6 +56,7 @@ public class Deck implements Serializable {
 
         return "";
     }
+
 
     public Card getCard(int index){ // get the requested card from the deck
 
