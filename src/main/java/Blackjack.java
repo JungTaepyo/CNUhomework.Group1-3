@@ -133,6 +133,9 @@ public class Blackjack implements Serializable {
                 break;
             }
         }
+        //조건 break시 최종 돈 출력
+        System.out.println();
+        System.out.println("You leave with $" + money + '.');
 
     }
 
