@@ -31,4 +31,8 @@ public class Hand {
     public int getCardCount() {
         return hand.size();
     }
+
+    public Card getCard(int position) {
+        return null;
+    }
 }
