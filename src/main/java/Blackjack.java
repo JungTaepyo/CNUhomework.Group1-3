@@ -68,8 +68,14 @@ public class Blackjack implements Serializable {
         while (true) {
             System.out.println("You have " + money + " dollars.");
             do {
-                //베팅금액 정함
-            } while (true);
+                System.out.println("How many dollars do you want to bet?  (Enter 0 to end.)");
+                System.out.print("? ");
+                scannedToken = scan.next();// 사용자에게 문자열을 입력받음
+
+                bet = Integer.parseInt(scannedToken);
+                if (bet < 0 || bet > money)
+                    System.out.println("Your answer must be between 0 and " + money + '.');
+            } while (bet < 0 || bet > money);
         }
 
     }
