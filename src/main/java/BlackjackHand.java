@@ -12,14 +12,14 @@ public class BlackjackHand extends Hand implements Serializable {
         cards = getCardCount();
 
         for (int i = 0; i < cards; i++) {// i 번째 카드의 값을 손에 넣는다.
-            Card card;
-            int cardVal;
+            Card card; // i 번째 카드;
+            int cardVal; // i 번째 카드의 블랙 잭 값.
             card = getCard(i);
-            cardVal = card.getValue();
+            cardVal = card.getValue(); // 1에서 13 사이의 일반 값.
             if (cardVal == 1)
                 ace = true;
             if (cardVal > 10)
-                cardVal = 10;
+                cardVal = 10;// jack, queen, king일 경우
             value = value + cardVal;
         }
         if (ace == true) {
