@@ -37,11 +37,11 @@ public class DeckTest {
     @Test
     public void SHUFFLING_DOING_OK(){
         Deck deck = new Deck();
-        Card card1=deck.getCard(0);
+        Card card1=deck.getDeck()[0];
         deck.shuffle();
-        Card card2=deck.getCard(0);
+        Card card2=deck.getDeck()[0];
 
         assertNotEquals(card1, card2);
     }
-    
+
 }
