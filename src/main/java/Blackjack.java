@@ -206,6 +206,9 @@ public class Blackjack implements Serializable {
                 }
                 System.exit(0);
 
+            } else if (userAction == 2) {
+                // Loop ends; user is done taking cards.
+                break;
             }
 
 
