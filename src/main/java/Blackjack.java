@@ -241,6 +241,7 @@ public class Blackjack implements Serializable {
                 return true;
             }
         }
+        System.out.println("Dealer's total is " + dealerHand.getBlackjackValue());
         return true;
     }
 
