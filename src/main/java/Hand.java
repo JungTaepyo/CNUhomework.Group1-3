@@ -59,7 +59,18 @@ public class Hand {
     }
 
     public void sortByValue() {
-
+        Vector newHand = new Vector();
+        while(hand.size() > 0){
+            int pos = 0;
+            Card c = (Card)hand.elementAt(0);
+            for(int i = 1; i < hand.size(); i++){
+                Card c1 = (Card)hand.elementAt(i);
+                if(c1.getValue() < c.getValue()){
+                    pos = i;
+                    c = c1;
+                }
+            }
+        }
     }
 
     public String toString(){
