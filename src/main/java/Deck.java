@@ -40,12 +40,6 @@ public class Deck implements Serializable {
         // 덱에서 카드 하나를 리턴하는 함수
         Card returnCard = null;
         //shuffle
-        for(int count = 51; count>0; count--){
-            int randomNumber = (int)(Math.random()*(count+1));
-            Card temp = deck[count];
-            deck[count] = deck[randomNumber];
-            deck[randomNumber] =temp;
-        }
         returnCard=deck[cardsUsed -1];
         return returnCard;
     }
