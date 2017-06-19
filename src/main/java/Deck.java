@@ -17,8 +17,7 @@ public class Deck implements Serializable {
                 cardCount++; // set next index
             }
         }
-
-
+        cardsUsed = 0; // Initialize the used card variable
     }
 
     public void shuffle() { //사용한 카드를 다시 덱에 넣어서 shuffle
