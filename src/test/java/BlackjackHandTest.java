@@ -17,5 +17,7 @@ public class BlackjackHandTest {
     @Test
     public void ace를_찾게_되면_true로_리턴() {
         BlackjackHand blackjackHand = new BlackjackHand();
+
+        assertThat(blackjackHand.getBlackjackValue(), is(21));
     }
 }

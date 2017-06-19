@@ -4,10 +4,12 @@ import java.io.Serializable;
  * Created by user on 2017-06-19.
  */
 public class BlackjackHand extends Hand implements Serializable {
-    public int getBlackjackValue() { //----------Edited----------//
+    public int getBlackjackValue() {
         //특정 Hand에 있는 블랙잭 합 계산
-
-        int value = 21; //최댓값
+        int value = 0;
+        int cards = 0;
+        boolean ace = false;
+        cards = getCardCount();
 
         return value;
 
