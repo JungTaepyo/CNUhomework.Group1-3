@@ -179,6 +179,8 @@ public class Blackjack implements Serializable {
             }
             System.out.println("Your total is "+userHand.getBlackjackValue());
             System.out.println("Dealer is showing the "+dealerHand.getCard(0));
+            System.out.println("Hit (1), Stand(2) or Store & Quit(3) ? ");
+            int userAction;
             
             break;
         }
