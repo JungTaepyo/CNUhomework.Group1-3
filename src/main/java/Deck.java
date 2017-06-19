@@ -19,4 +19,8 @@ public class Deck implements Serializable {
     public int cardsLeft() {
         return cardsUsed;
     }
+
+    public Card dealCard() {
+        return deck[0];
+    }
 }
