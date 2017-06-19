@@ -20,12 +20,12 @@ public class Blackjack implements Serializable {
         boolean userWins; // 얼마나 이겼는지 확인
 
         System.out.println("블랙잭 게임을 시작합니다.");
-        System.out.println();
+        System.out.println(); // 구분
 
         String scannedToken;// 입력받은 string을 저장하는 변수
 
-        while (true) {
-            int userInput = -1;
+        while (true) { // 무한 반복문
+            int userInput = -1; // 처음 input값 초기화
             System.out.println("저장된 게임을 불러오시겠습니까?");
             System.out.println("새 게임시작(0), 불러오기(1)");
             scannedToken = scan.next();
