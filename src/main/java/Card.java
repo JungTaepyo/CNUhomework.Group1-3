@@ -12,4 +12,8 @@ public class Card implements Serializable {
     public final static int JACK = 11 ;
     public final static int QUEEN = 12 ;
     public final static int KING = 13 ;
+
+    public Card(int theValue, int theSuit) {
+
+    }
 }
