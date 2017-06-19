@@ -105,6 +105,13 @@ public class Blackjack implements Serializable {
                     System.out.println("! 새로운 카드를 처음부터 재배포합니다");
                 }
             }
+            //user가 이길시 예외처리
+            if (userWins) {
+
+            }
+            else{
+
+            }
         }
 
     }
