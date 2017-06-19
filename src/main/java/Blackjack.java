@@ -21,29 +21,7 @@ public class Blackjack implements Serializable {
         System.out.println();
 
         String scannedToken;// 입력받은 string을 저장하는 변수
-        System.out.println("저장한 게임을 불러오겠습니까?");
-        System.out.println("새 게임시작(0), 불러오기(1)");
-
-        System.out.println("How many dollars do you want to bet?  (Enter 0 to end.)");
-
-        System.out.println("! Error: 입력이 잘못 되었습니다 ");
-        System.out.println("! 새로운 카드를 처음부터 재배포합니다");
-
-        System.out.println();
-        System.out.println("! Warning : You have reached maximum money to won");
-        System.out.println();
-        System.out.println("***********************************************");
-        System.out.println("*! congratulation!! you have broke the dealer!!*");
-        System.out.println("***********************************************");
-        System.out.println();
-        System.out.println("You leave with $" + Integer.MAX_VALUE + '.');
-
-        while (true) {
-            System.out.println("You have " + money + " dollars.");
-            return;
-        }
-
-    } // end main()
+    }
 
     static boolean playBlackjack(Backup getBackup, boolean isBackuped) throws InputMismatchException {
         return true;
