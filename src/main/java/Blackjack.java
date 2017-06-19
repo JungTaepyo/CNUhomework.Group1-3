@@ -189,7 +189,24 @@ public class Blackjack implements Serializable {
                     System.out.println("Please respond 1, 2 or 3");
                 }
             }while(userAction != 1 && userAction != 2 && userAction != 3);
+            if (userAction == 3) {                  //if userAction ==3,
+                getBackup.storedDealerHand = dealerHand;
+                getBackup.storedUserHand = userHand;
+                getBackup.storedDeck = deck;
+                try {
+                    FileOutputStream fos = new FileOutputStream("BackupFile");
+                    ObjectOutputStream oos = new ObjectOutputStream(fos);
+                    oos.writeObject(getBackup);
+                    oos.close();
+                    fos.close();
+                    System.out.println("!알림: 게임이 저장되었습니다.");
+                    System.out.println("저장된 당신의 돈  : $" + getBackup.storedMoney + '.');
+                } catch (Exception e) {
+                    System.out.println("!Fetal Error: File out failed");
+                }
+                System.exit(0);
 
+            }
 
 
 
