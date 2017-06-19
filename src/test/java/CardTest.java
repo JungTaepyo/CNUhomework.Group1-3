@@ -29,4 +29,9 @@ public class CardTest {
     public void getSuitAsString_테스트(){
         assertThat(firstCard.getSuitAsString()== "Heart");
     }
+
+    @Test
+    public void getValueAsString_초기값테스트(){
+        assertThat(firstCard.getValueAsString()=="10");
+    }
 }
