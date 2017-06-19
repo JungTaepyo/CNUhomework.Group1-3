@@ -9,15 +9,9 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class BlackjackHandTest {
 
     @Test
-    public void 블랙잭_핸드_개수_테스트() {
-        BlackjackHand blackjackHand = new BlackjackHand();
-        assertThat(blackjackHand.getBlackjackValue(), is(21));
-    }
-
-    @Test
     public void ace를_찾게_되면_true로_리턴() {
         BlackjackHand blackjackHand = new BlackjackHand();
-
-        assertThat(blackjackHand.getBlackjackValue(), is(21));
+        // 1은 true일 경우
+        assertThat(blackjackHand.getBlackjackValue(), is(1));
     }
 }
