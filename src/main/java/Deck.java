@@ -3,6 +3,7 @@ import java.io.Serializable;
 /**
  * Created by user on 2017-06-19.
  */
+
 public class Deck implements Serializable {
     private Card[] deck;
     private int cardsUsed;//Card used in game, when cards reach to 52 we need to shuffle
@@ -47,5 +48,9 @@ public class Deck implements Serializable {
 
     public String toString(){
         return "";
+    }
+
+    public Card getCard(int index){
+        return deck[index];
     }
 }
