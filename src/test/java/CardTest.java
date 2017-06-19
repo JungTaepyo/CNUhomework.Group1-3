@@ -29,4 +29,22 @@ public class CardTest {
     public void getSuitAsString_테스트(){
         assertThat(firstCard.getSuitAsString()== "Heart");
     }
+
+    @Test
+    public void getValueAsString_초기값테스트(){
+        assertThat(firstCard.getValueAsString()=="10");
+        //do not use this test method again, it will not work
+    }
+
+    @Test
+    public void getValueAsString_테스트(){
+        assertThat(firstCard.getValueAsString()=="1");
+    }
+
+    @Test
+    public void toString_테스트(){
+        assertThat(firstCard.toString() == "ACE of Heart");
+    }
+
+
 }
