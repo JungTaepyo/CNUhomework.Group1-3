@@ -156,10 +156,7 @@ public class Blackjack implements Serializable {
             userHand = new BlackjackHand();
             deck.shuffle();
         }
-        dealerHand.addCard(deck.dealCard());
-        dealerHand.addCard(deck.dealCard());
-        userHand.addCard(deck.dealCard());
-        userHand.addCard(deck.dealCard());
+        DealCard(dealerHand,userHand,deck);
 
         if(dealerHand.getBlackjackValue() == 21){
             Blackjack_CardInfo(dealerHand,userHand);
@@ -199,6 +196,13 @@ public class Blackjack implements Serializable {
             break;
         }
         return true;
+    }
+
+    private static void DealCard(BlackjackHand dealerHand, BlackjackHand userHand,Deck deck) {
+        dealerHand.addCard(deck.dealCard());
+        dealerHand.addCard(deck.dealCard());
+        userHand.addCard(deck.dealCard());
+        userHand.addCard(deck.dealCard());
     }
 
     static void Blackjack_CardInfo(BlackjackHand dealerHand, BlackjackHand userHand){
