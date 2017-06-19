@@ -68,12 +68,16 @@ public class Hand {
             Card c = (Card)hand.elementAt(0);
             for(int i = 1; i < hand.size(); i++){
                 Card c1 = (Card)hand.elementAt(i);
-                if(c1.getValue() < c.getValue()){
+                if(c1.getValue() < c.getValue() ||
+                        (c1.getValue() == c.getValue() && c1.getSuit() < c.getSuit())){
                     pos = i;
                     c = c1;
                 }
             }
+            hand.removeElementAt(pos);
+            newHand.addElement(c);
         }
+        hand = newHand;
     }
 
     public String toString() {
