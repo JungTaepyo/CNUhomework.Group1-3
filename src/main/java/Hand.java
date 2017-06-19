@@ -37,6 +37,7 @@ public class Hand {
     }
 
     public void sortBySuit() {
+        //Sorts the cards
         Vector newHand = new Vector();
         while(hand.size()>0){
             int pos = 0;
