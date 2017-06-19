@@ -43,7 +43,10 @@ public class Hand {
             Card c = (Card)hand.elementAt(0);
             for(int i = 1; i< hand.size(); i++){
                 Card c1 = (Card)hand.elementAt(i);
-                
+                if ( c1.getSuit() < c.getSuit() ||
+                        (c1.getSuit() == c.getSuit() && c1.getValue() < c.getValue()) ){
+                    
+                }
             }
         }
     }
