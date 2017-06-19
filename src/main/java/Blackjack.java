@@ -65,17 +65,34 @@ public class Blackjack implements Serializable {
             money = 100;
         }
 
+
         while (true) {
             System.out.println("You have " + money + " dollars.");
             do {
-                System.out.println("How many dollars do you want to bet?  (Enter 0 to end.)");
-                System.out.print("? ");
-                scannedToken = scan.next();// 사용자에게 문자열을 입력받음
 
-                bet = Integer.parseInt(scannedToken);
+                // 예외처리: 사용자입력이 정수가 아닌 다른 type을 받는 경우
+
+                while (true) {
+                    System.out.println("How many dollars do you want to bet?  (Enter 0 to end.)");
+                    System.out.print("? ");
+                    scannedToken = scan.next();// 사용자에게 문자열을 입력받음
+                    try {
+                        // 정수인 경우: 입력받은 문자열을 정수로 변환하여 bet에 저장하고 break
+                        bet = Integer.parseInt(scannedToken);
+                        break;
+                    } catch (NumberFormatException e) {
+                        // 입력받은 문자열이 정수가 아닌 경우
+                        System.out.println("! Error: 입력이 잘못 되었습니다  (" + scannedToken + ")");
+                    } finally {
+                        System.out.println("! User input type has been checked");
+                    }
+                }
+
                 if (bet < 0 || bet > money)
                     System.out.println("Your answer must be between 0 and " + money + '.');
             } while (bet < 0 || bet > money);
+            if (bet == 0)
+                break;
         }
 
     }
