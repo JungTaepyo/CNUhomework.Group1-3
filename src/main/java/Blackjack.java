@@ -1,3 +1,5 @@
+import org.codehaus.groovy.runtime.powerassert.SourceText;
+
 import java.io.*;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -21,12 +23,60 @@ public class Blackjack implements Serializable {
         System.out.println();
 
         String scannedToken;// 입력받은 string을 저장하는 변수
+        while (true) {
+            int userInput = -1;
+            System.out.println("저장된 게임을 불러오시겠습니까?");
+            System.out.println("새 게임시작(0), 불러오기(1)");
+            scannedToken = scan.next();
+
+
+            try {
+                userInput = Integer.parseInt((scannedToken));
+            } catch (NumberFormatException e) {
+                // 입력받은 문자열이 정수가 아닌 경우
+            }
+
+            if (userInput != 0 && userInput != 1) {
+                System.out.println("!Error: 0 또는 1을 입력 해야합니다. " + userInput);
+                continue;
+            } else {
+                isBackedup = (userInput != 0);
+                break;
+            }
+        }
+
+        if(isBackedup){
+            try{
+                FileInputStream fis = new FileInputStream("BackupFile");
+                ObjectInputStream ois = new ObjectInputStream(fis);
+                backup = (Backup) ois.readObject();
+                ois.close();
+                fis.close();
+                System.out.println("저장된 게임을 불러왔습니다.");
+            }catch (Exception e) {
+
+            }
+                money = 100;
+            }
+
+        }
     }
 
     static boolean playBlackjack(Backup getBackup, boolean isBackuped) throws InputMismatchException {
-        Deck deck; // A deck of cards. A new deck for each game.
-        BlackjackHand dealerHand; // 딜러 참조변수 선언
-        BlackjackHand userHand; // 유저의 참조변수 선언
+        Deck deck = null;
+        BlackjackHand dealerHand = null;
+        BlackjackHand userHand = null;
+
+        if(isBackuped){
+            deck = getBackup.storedDeck;
+            dealerHand = getBackup.storedDealerHand;
+            userHand = getBackup.storedUserHand;
+        }
+        else{
+            deck = new Deck();
+            dealerHand = new BlackjackHand();
+            userHand = new BlackjackHand();
+        }
         return true;
     }
 
