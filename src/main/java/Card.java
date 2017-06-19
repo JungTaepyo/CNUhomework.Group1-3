@@ -25,6 +25,7 @@ public class Card implements Serializable {
         return suit;
     }
     public int getValue() {
+        // value에 맞는 integer 리턴
         return value;
     }
     public String getSuitAsString() {
