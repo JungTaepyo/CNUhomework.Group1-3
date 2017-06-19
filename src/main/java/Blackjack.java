@@ -48,7 +48,12 @@ public class Blackjack implements Serializable {
 
         if(isBackedup){
             try{
-
+                FileInputStream fis = new FileInputStream("BackupFile");
+                ObjectInputStream ois = new ObjectInputStream(fis);
+                backup = (Backup) ois.readObject();
+                ois.close();
+                fis.close();
+                System.out.println("저장된 게임을 불러왔습니다.");
             }catch (Exception e) {
 
             }
