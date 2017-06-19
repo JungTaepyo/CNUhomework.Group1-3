@@ -256,7 +256,6 @@ public class Blackjack implements Serializable {
                     "You win, " + userHand.getBlackjackValue() + " points to " + dealerHand.getBlackjackValue() + ".");
             return true;
         }
-        return true;
     }
 
     private static void DealCard(BlackjackHand dealerHand, BlackjackHand userHand,Deck deck) {
