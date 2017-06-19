@@ -14,4 +14,8 @@ public class CardTest {
         Card secondCard = new Card(1,1);
         assertThat(firstCard==secondCard);
     }
+
+    @Test
+    public void isValue_잘되나(){
+    }
 }
