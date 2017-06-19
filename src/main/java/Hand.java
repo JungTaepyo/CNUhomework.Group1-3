@@ -37,10 +37,11 @@ public class Hand {
     }
 
     public void sortBySuit() {
+
     }
 
     public void sortByValue() {
-
+        Vector newHand = new Vector();
     }
 
     public String toString(){
