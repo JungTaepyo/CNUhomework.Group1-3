@@ -24,4 +24,9 @@ public class CardTest {
     public void getSuit_잘되나(){
         assertThat(firstCard.getSuit()==1);
     }
+
+    @Test
+    public void getSuitAsString_테스트(){
+        
+    }
 }
