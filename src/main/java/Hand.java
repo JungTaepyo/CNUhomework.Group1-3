@@ -33,7 +33,10 @@ public class Hand {
     }
 
     public Card getCard(int position) {
-        return null;
+        if(position >= 0 && position < hand.size())
+            return (Card)hand.elementAt(position);
+        else
+            return null;
     }
 
     public void sortBySuit() {
