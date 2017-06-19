@@ -96,7 +96,11 @@ public class Blackjack implements Serializable {
 
             // 예외처리1
             while (true) {
+                try {
 
+                } catch (InputMismatchException e) {
+                    
+                }
             }
         }
 
