@@ -57,8 +57,8 @@ public class Blackjack implements Serializable {
             }catch (Exception e) {
                 System.out.println("에러발생 !");
                 e.printStackTrace();
-
             }
+            money = backup.storedMoney;
                 money = 100;
             }
 
