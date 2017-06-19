@@ -46,7 +46,14 @@ public class Blackjack implements Serializable {
             }
         }
 
-        
+        if(isBackedup){
+            try{
+
+            }catch (Exception e) {
+
+            }
+                money = 100;
+            }
 
         }
     }
