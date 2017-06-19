@@ -38,6 +38,9 @@ public class Hand {
 
     public void sortBySuit() {
         Vector newHand = new Vector();
+        while(hand.size()>0){
+            
+        }
     }
 
     public void sortByValue() {
