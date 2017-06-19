@@ -174,7 +174,9 @@ public class Blackjack implements Serializable {
 
         while(true){
             Scanner scan = new Scanner(System.in);
-
+            for(int i = 0; i < userHand.getCardCount(); i++) {
+                System.out.println(userHand.getCard(i) + "      ");
+            }
 
             break;
         }
