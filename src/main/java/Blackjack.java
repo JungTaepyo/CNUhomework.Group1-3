@@ -93,6 +93,11 @@ public class Blackjack implements Serializable {
             } while (bet < 0 || bet > money);
             if (bet == 0)
                 break;
+
+            // 예외처리1
+            while (true) {
+
+            }
         }
 
     }
