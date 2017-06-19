@@ -37,6 +37,7 @@ public class Hand {
     }
 
     public void sortBySuit() {
+        Vector newHand = new Vector();
     }
 
     public void sortByValue() {
