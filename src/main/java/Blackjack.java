@@ -23,7 +23,6 @@ public class Blackjack implements Serializable {
         System.out.println(); // 구분
 
         String scannedToken;// 입력받은 string을 저장하는 변수
-
         while (true) { // 무한 반복문
             int userInput = -1; // 처음 input값 초기화
             System.out.println("저장된 게임을 불러오시겠습니까?");
@@ -63,11 +62,27 @@ public class Blackjack implements Serializable {
             money = 100;
         }
 
+
     }
 
 
 
+
     static boolean playBlackjack(Backup getBackup, boolean isBackuped) throws InputMismatchException {
+        Deck deck = null;
+        BlackjackHand dealerHand = null;
+        BlackjackHand userHand = null;
+
+        if(isBackuped){
+            deck = getBackup.storedDeck;
+            dealerHand = getBackup.storedDealerHand;
+            userHand = getBackup.storedUserHand;
+        }
+        else{
+            deck = new Deck();
+            dealerHand = new BlackjackHand();
+            userHand = new BlackjackHand();
+        }
         return true;
     }
 
