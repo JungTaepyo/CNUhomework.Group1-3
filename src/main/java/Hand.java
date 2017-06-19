@@ -52,6 +52,7 @@ public class Hand {
             hand.remove(pos);
             newHand.addElement(c);
         }
+        hand = newHand;
     }
 
     public void sortByValue() {
