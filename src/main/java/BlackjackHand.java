@@ -17,7 +17,7 @@ public class BlackjackHand extends Hand implements Serializable {
             card = getCard(i);
             cardVal = card.getValue();
             if (cardVal == 1) {
-                ace = true;     // There is at least one ace.
+                ace = true;
             }
         }
         if (ace == true){
