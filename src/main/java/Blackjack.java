@@ -205,7 +205,7 @@ public class Blackjack implements Serializable {
         userHand.addCard(deck.dealCard());
     }
 
-    static void Blackjack_CardInfo(BlackjackHand dealerHand, BlackjackHand userHand){
+    private static void Blackjack_CardInfo(BlackjackHand dealerHand, BlackjackHand userHand){
         System.out.println("Dealer has the "+ dealerHand.getCard(0) +" and the "+dealerHand.getCard(1));
         System.out.println("User has the "+ userHand.getCard(0) +" and the "+userHand.getCard(1));
     }
