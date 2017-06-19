@@ -40,7 +40,7 @@ public class Card implements Serializable {
             case CLUBS:
                 return "Clubs";
             default:
-                return null;
+                return "??";
         }
     }
     public String getValueAsString() { //----------Edited----------//
@@ -58,7 +58,7 @@ public class Card implements Serializable {
             case 11:  return "Jack";
             case 12:  return "Queen";
             case 13:  return "King";
-            default:  return null;
+            default:  return "??";
         }
     }
     public String toString() {
