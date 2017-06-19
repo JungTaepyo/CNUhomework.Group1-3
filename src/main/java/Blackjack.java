@@ -97,9 +97,12 @@ public class Blackjack implements Serializable {
             // 예외처리1
             while (true) {
                 try {
-
+                    backup.storedMoney = money;
+                    userWins = playBlackjack(backup, isBackedup);
+                    break;
                 } catch (InputMismatchException e) {
-                    
+                    System.out.println("! Error: 입력이 잘못 되었습니다 ");
+                    System.out.println("! 새로운 카드를 처음부터 재배포합니다");
                 }
             }
         }
