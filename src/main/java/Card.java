@@ -31,6 +31,9 @@ public class Card implements Serializable {
     }
     public String getValueAsString() {
         return "10";
-    }    
+    }
+    public String toString() {
+        return getValueAsString() + " of " + getSuitAsString();
+    }
 
 }
