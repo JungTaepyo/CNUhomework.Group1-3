@@ -144,6 +144,19 @@ public class Blackjack implements Serializable {
         Deck deck;
         BlackjackHand dealerHand;
         BlackjackHand userHand;
+
+        if(isBackuped){
+            deck = getBackup.storedDeck;
+            dealerHand = getBackup.storedDealerHand;
+            userHand = getBackup.storedUserHand;
+        }
+        else{
+            deck = new Deck();
+            dealerHand = new BlackjackHand();
+            userHand = new BlackjackHand();
+            deck.shuffle();
+        }
+        
         return true;
     }
 }
