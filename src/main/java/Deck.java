@@ -1,6 +1,5 @@
 
 import lombok.Data;
-
 import java.io.Serializable;
 
 /**
@@ -9,17 +8,16 @@ import java.io.Serializable;
 @Data
 public class Deck implements Serializable {
 
-    private Card[] deck; //create deck
-    private int cardsUsed;//Card used in game, when cards reach to 52 we need to shuffle
+    private Card[] deck; // Creates card deck
+    private int cardsUsed;// Card used in game, when cards reach to 52 we need to shuffle
 
-    public Deck() {
-        // creates unshuffled cards deck
+    public Deck() { // Creates unshuffled cards deck
         deck = new Card[52]; // 52 cards
         int cardCount = 0; // Cards that have been used
         for(int suit = 0; suit <= 3; suit++){ // Create each Suits
             for(int value = 1; value <= 13; value++){ // Create each Values
                 deck[cardCount] = new Card(value, suit); // Create each suit and set the value
-                cardCount++; // set next index
+                cardCount++;
             }
         }
         cardsUsed = 0; // Initialize the used card variable
