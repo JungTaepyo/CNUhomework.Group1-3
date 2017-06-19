@@ -16,6 +16,7 @@ public class Deck implements Serializable {
         for(int i = 0; i<51; i++){
             int random = (int)(Math.random()*(i+1));
             Card temp = deck[i];
+            deck[i] = deck[random];
 
         }
     }
