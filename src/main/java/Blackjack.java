@@ -225,6 +225,7 @@ public class Blackjack implements Serializable {
                 }
             }
         }   //end while loop
+       
         System.out.println();
         System.out.println("User stands.");
         System.out.println("Dealer's cards are");
@@ -242,7 +243,10 @@ public class Blackjack implements Serializable {
             }
         }
         System.out.println("Dealer's total is " + dealerHand.getBlackjackValue());
-
+        /*
+		 * If we get to this point, both players have 21 or less. We can
+		 * determine the winner by comparing the values of their hands.
+		 */
         System.out.println();
         if (dealerHand.getBlackjackValue() == userHand.getBlackjackValue()) {
             System.out.println("Dealer wins on a tie.  You lose.");
@@ -256,7 +260,7 @@ public class Blackjack implements Serializable {
                     "You win, " + userHand.getBlackjackValue() + " points to " + dealerHand.getBlackjackValue() + ".");
             return true;
         }
-    }
+    }      //end  playBlackJack()
 
     private static void DealCard(BlackjackHand dealerHand, BlackjackHand userHand,Deck deck) {
         dealerHand.addCard(deck.dealCard());
