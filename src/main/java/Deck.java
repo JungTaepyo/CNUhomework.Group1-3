@@ -13,9 +13,10 @@ public class Deck implements Serializable {
     }
 
     public void shuffle() { //사용한 카드를 다시 덱에 넣어서 shuffle
-        for(int i = 51; i>0; i--){
+        for(int i = 0; i<51; i++){
             int random = (int)(Math.random()*(i+1));
             Card temp = deck[i];
+
         }
     }
 
