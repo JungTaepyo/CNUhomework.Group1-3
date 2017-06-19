@@ -11,4 +11,21 @@ public class Deck implements Serializable {
         //섞이지 않은 카드 덱 생
         deck = new Card[52];
     }
+
+    public void shuffle() { //사용한 카드를 다시 덱에 넣어서 shuffle
+
+    }
+
+    public int cardsLeft() {
+        return cardsUsed;
+    }
+
+    public Card dealCard() {
+        return deck[0];
+    }
+
+    public String toString(){
+        return "";
+
+    }
 }
