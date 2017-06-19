@@ -20,4 +20,9 @@ public class CardTest {
         Card firstCard = new Card(1,1);
         assertThat(firstCard.getValue()==1);
     }
+
+    @Test
+    public void getSuit_잘되나(){
+
+    }
 }
