@@ -6,12 +6,13 @@ import java.io.Serializable;
  */
 
 public class Deck implements Serializable {
-    private Card[] deck;
+
+    private Card[] deck; //create deck
     private int cardsUsed;//Card used in game, when cards reach to 52 we need to shuffle
 
     public Deck() {
-        // create unshuffled cards deck
-        deck = new Card[52];
+        // creates unshuffled cards deck
+        deck = new Card[52]; // 52 cards
         int cardCount = 0; // Cards that have been used
         for(int suit = 0; suit <= 3; suit++){ // Create each Suits
             for(int value = 1; value <= 13; value++){ // Create each Values
