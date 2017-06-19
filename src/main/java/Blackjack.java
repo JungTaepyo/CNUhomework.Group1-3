@@ -160,6 +160,17 @@ public class Blackjack implements Serializable {
         dealerHand.addCard(deck.dealCard());
         userHand.addCard(deck.dealCard());
         userHand.addCard(deck.dealCard());
+
+        if(dealerHand.getBlackjackValue() == 21){
+
+            System.out.println("Dealer is BlackJack, Dealer win");
+            return false;
+        }
+        if(userHand.getBlackjackValue() == 21){
+
+            System.out.println("You are BlackJack, You win");
+            return true;
+        }
         return true;
     }
 }
