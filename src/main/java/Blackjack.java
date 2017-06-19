@@ -181,7 +181,13 @@ public class Blackjack implements Serializable {
             System.out.println("Dealer is showing the "+dealerHand.getCard(0));
             System.out.println("Hit (1), Stand(2) or Store & Quit(3) ? ");
             int userAction;
-            
+            do{
+                userAction = scan.nextInt();
+                if(userAction != 1 && userAction != 2 && userAction != 3){
+                    System.out.println("Please respond 1, 2 or 3");
+                }
+            }while(userAction != 1 && userAction != 2 && userAction != 3);
+
             break;
         }
         return true;
