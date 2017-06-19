@@ -65,7 +65,12 @@ public class Blackjack implements Serializable {
             money = 100;
         }
 
-
+        while (true) {
+            System.out.println("You have " + money + " dollars.");
+            do {
+                //베팅금액 정함
+            } while (true);
+        }
 
     }
 
