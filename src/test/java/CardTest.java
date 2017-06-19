@@ -17,7 +17,6 @@ public class CardTest {
 
     @Test
     public void isValue_잘되나(){
-        Card firstCard = new Card(1,1);
         assertThat(firstCard.getValue()==1);
     }
 
