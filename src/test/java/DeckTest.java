@@ -3,6 +3,8 @@ import org.junit.Test;
 import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 import static org.springframework.util.Assert.isInstanceOf;
 
 /**
@@ -20,6 +22,17 @@ public class DeckTest {
         Deck deck = new Deck();
         Card returnCard = deck.dealCard();
         assertThat(returnCard, instanceOf(Card.class));
+    }
+    @Test
+    public void DEAL_CARD_CHECK_WHETHER_IT_SHUFFLES_THE_DECK_WHEN_CARD_USED_REACHED_TO_52(){
+        Deck deck = new Deck();
+        int count=1;
+        Card returnCard=deck.dealCard();
+        while(count<52){
+            deck.dealCard();
+            count++;
+        }
+        assertNotEquals(returnCard, deck.dealCard());
     }
 
 }
