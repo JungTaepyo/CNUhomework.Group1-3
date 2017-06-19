@@ -6,7 +6,7 @@ import java.util.Vector;
 public class Hand {
     private Vector hand;
 
-    public Hand(){
+    public Hand() {
         hand = new Vector();
     }
 
@@ -33,17 +33,54 @@ public class Hand {
     }
 
     public Card getCard(int position) {
-        return null;
+        if(position >= 0 && position < hand.size())
+            return (Card)hand.elementAt(position);
+        else
+            return null;
     }
 
     public void sortBySuit() {
+        //Sorts the cards
+        Vector newHand = new Vector();
+        while(hand.size()>0){
+
+            int pos = 0;
+            Card c = (Card)hand.elementAt(0);
+
+            for(int i = 1; i< hand.size(); i++){
+                Card c1 = (Card)hand.elementAt(i);
+                if ( c1.getSuit() < c.getSuit() ||
+                        (c1.getSuit() == c.getSuit() && c1.getValue() < c.getValue()) ){
+                    pos = i;
+                    c = c1;
+                }
+            }
+            hand.remove(pos);
+            newHand.addElement(c);
+        }
+        hand = newHand;
     }
 
     public void sortByValue() {
-
+        Vector newHand = new Vector();
+        while(hand.size() > 0){
+            int pos = 0;
+            Card c = (Card)hand.elementAt(0);
+            for(int i = 1; i < hand.size(); i++){
+                Card c1 = (Card)hand.elementAt(i);
+                if(c1.getValue() < c.getValue() ||
+                        (c1.getValue() == c.getValue() && c1.getSuit() < c.getSuit())){
+                    pos = i;
+                    c = c1;
+                }
+            }
+            hand.removeElementAt(pos);
+            newHand.addElement(c);
+        }
+        hand = newHand;
     }
 
-    public String toString(){
+    public String toString() {
         return "";
 
     }
