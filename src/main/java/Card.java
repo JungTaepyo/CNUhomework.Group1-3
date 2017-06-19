@@ -23,4 +23,7 @@ public class Card implements Serializable {
     public int getSuit() {
         return suit;
     }
+    public int getValue() {
+        return value;
+    }
 }
