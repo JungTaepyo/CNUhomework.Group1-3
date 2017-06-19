@@ -29,5 +29,8 @@ public class Card implements Serializable {
     public String getSuitAsString() {
         return "Spades";
     }
-    
+    public String getValueAsString() {
+        return "10";
+    }    
+
 }
