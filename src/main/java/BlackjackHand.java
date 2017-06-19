@@ -11,6 +11,12 @@ public class BlackjackHand extends Hand implements Serializable {
         boolean ace = false;
         cards = getCardCount();
 
+        for ( int i = 0;  i < cards;  i++ ) {
+            Card card;
+            int cardVal;
+            card = getCard(i);
+            cardVal = card.getValue();
+        }
         return value;
 
     }
