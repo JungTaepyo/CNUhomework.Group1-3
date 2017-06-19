@@ -60,7 +60,7 @@ public class Blackjack implements Serializable {
             }
             money = backup.storedMoney;
         }else{
-            
+            money = 100;
             }
 
         }
