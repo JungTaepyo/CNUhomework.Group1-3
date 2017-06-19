@@ -30,6 +30,11 @@ public class Blackjack implements Serializable {
             System.out.println("새 게임시작(0), 불러오기(1)");
             scannedToken = scan.next();
         }
+        try {
+            
+        }catch(NumberFormatException e) {
+        }
+        }
 
     }
 
