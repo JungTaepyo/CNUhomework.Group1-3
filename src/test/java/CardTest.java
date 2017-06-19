@@ -22,6 +22,6 @@ public class CardTest {
 
     @Test
     public void getSuit_잘되나(){
-
+        assertThat(firstCard.getSuit()==1);
     }
 }
