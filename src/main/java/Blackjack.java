@@ -230,6 +230,17 @@ public class Blackjack implements Serializable {
         System.out.println("Dealer's cards are");
         System.out.println("    " + dealerHand.getCard(0));
         System.out.println("    " + dealerHand.getCard(1));
+
+        while (dealerHand.getBlackjackValue() <= 16) {
+            Card newCard = deck.dealCard();
+            System.out.println("Dealer hits and gets the " + newCard);
+            dealerHand.addCard(newCard);
+            if (dealerHand.getBlackjackValue() > 21) {
+                System.out.println();
+                System.out.println("Dealer busted by going over 21.  You win.");
+                return true;
+            }
+        }
         return true;
     }
 
