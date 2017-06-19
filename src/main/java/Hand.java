@@ -35,4 +35,7 @@ public class Hand {
     public Card getCard(int position) {
         return null;
     }
+
+    public void sortBySuit() {
+    }
 }
