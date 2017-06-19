@@ -53,6 +53,7 @@ public class Blackjack implements Serializable {
                 backup = (Backup) ois.readObject();
                 ois.close();
                 fis.close();
+                System.out.println("저장된 게임을 불러왔습니다.");
             }catch (Exception e) {
 
             }
