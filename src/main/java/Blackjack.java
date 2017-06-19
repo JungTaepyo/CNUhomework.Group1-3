@@ -107,10 +107,10 @@ public class Blackjack implements Serializable {
             }
             //user가 이길시 예외처리
             if (userWins) {
-
+                money = money + bet;
             }
             else{
-
+                money = money - bet;
             }
         }
 
