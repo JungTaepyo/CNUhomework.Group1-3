@@ -34,5 +34,14 @@ public class DeckTest {
         }
         assertNotEquals(returnCard, deck.dealCard());
     }
+    @Test
+    public void SHUFFLING_DOING_OK(){
+        Deck deck = new Deck();
+        Card card1=deck.getCard(0);
+        deck.shuffle();
+        Card card2=deck.getCard(0);
 
+        assertNotEquals(card1, card2);
+    }
+    
 }
