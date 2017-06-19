@@ -106,12 +106,26 @@ public class Blackjack implements Serializable {
                 }
             }
             //user가 이길시 예외처리
-            if (userWins) {
-                money = money + bet;
-            }
-            else{
+            if (userWins)
+                try {
+                    money = money + bet;
+                    if (money < 0) {
+                        throw new ArithmeticException();// throws ArithmeticException
+                    }
+                } catch (ArithmeticException e) {
+                    System.out.println();
+                    System.out.println("! Warning : You have reached maximum money to won");
+                    System.out.println();
+                    System.out.println("***********************************************");
+                    System.out.println("*! congratulation!! you have broke the dealer!!*");
+                    System.out.println("***********************************************");
+                    System.out.println();
+                    System.out.println("You leave with $" + Integer.MAX_VALUE + '.');
+                    System.exit(0);
+                }
+            else
                 money = money - bet;
-            }
+
         }
 
     }
