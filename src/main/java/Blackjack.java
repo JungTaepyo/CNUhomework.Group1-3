@@ -156,7 +156,10 @@ public class Blackjack implements Serializable {
             userHand = new BlackjackHand();
             deck.shuffle();
         }
-        
+        dealerHand.addCard(deck.dealCard());
+        dealerHand.addCard(deck.dealCard());
+        userHand.addCard(deck.dealCard());
+        userHand.addCard(deck.dealCard());
         return true;
     }
 }
