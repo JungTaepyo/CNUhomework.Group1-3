@@ -28,7 +28,7 @@ public class Blackjack implements Serializable {
             int userInput = -1; // 처음 input값 초기화
             System.out.println("저장된 게임을 불러오시겠습니까?");
             System.out.println("새 게임시작(0), 불러오기(1)");
-            scannedToken = scan.next();
+            scannedToken = scan.next(); // Token 받아오기
 
 
             try {
