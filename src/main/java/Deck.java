@@ -18,8 +18,8 @@ public class Deck implements Serializable {
             Card temp = deck[i];
             deck[i] = deck[random];
             deck[random] = temp;
-
         }
+        cardsUsed = 0;
     }
 
     public int cardsLeft() {
