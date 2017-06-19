@@ -26,12 +26,13 @@ public class Deck implements Serializable {
         return cardsUsed;
     }
 
+    //
     public Card dealCard() {
+        // 덱에서 카드 하나를 리턴하는 함수
         return deck[0];
     }
 
     public String toString(){
         return "";
-
     }
 }
