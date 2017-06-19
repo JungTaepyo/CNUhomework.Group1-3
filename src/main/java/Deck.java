@@ -11,6 +11,9 @@ public class Deck implements Serializable {
         //섞이지 않은 카드 덱 생성
         deck = new Card[52];
         int cardCount = 0; // 카드를 추가할때마다 증가
+        for(int suit = 0; suit <= 3; suit++){
+            
+        }
 
 
     }
