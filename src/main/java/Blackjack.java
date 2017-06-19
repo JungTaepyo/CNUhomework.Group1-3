@@ -225,6 +225,11 @@ public class Blackjack implements Serializable {
                 }
             }
         }   //end while loop
+        System.out.println();
+        System.out.println("User stands.");
+        System.out.println("Dealer's cards are");
+        System.out.println("    " + dealerHand.getCard(0));
+        System.out.println("    " + dealerHand.getCard(1));
         return true;
     }
 
