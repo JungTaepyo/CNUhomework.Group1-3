@@ -56,6 +56,7 @@ public class Blackjack implements Serializable {
                 System.out.println("저장된 게임을 불러왔습니다.");
             }catch (Exception e) {
                 System.out.println("에러발생 !");
+                e.printStackTrace();
 
             }
                 money = 100;
