@@ -225,7 +225,11 @@ public class Blackjack implements Serializable {
                 }
             }
         }   //end while loop
-       
+        /*
+		 * If we get to this point, the user has Stood with 21 or less. Now,
+		 * it's the dealer's chance to draw. Dealer draws cards until the
+		 * dealer's total is > 16. If dealer goes over 21, the dealer loses.
+		 */
         System.out.println();
         System.out.println("User stands.");
         System.out.println("Dealer's cards are");
