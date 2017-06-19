@@ -21,6 +21,13 @@ public class Blackjack implements Serializable {
         System.out.println();
 
         String scannedToken;// 입력받은 string을 저장하는 변수
+
+        while (true) {
+            System.out.println("You have " + money + " dollars.");
+            do {
+                //베팅금액 정함
+            } while (true);
+        }
     }
 
     static boolean playBlackjack(Backup getBackup, boolean isBackuped) throws InputMismatchException {
