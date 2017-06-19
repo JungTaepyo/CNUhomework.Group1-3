@@ -13,7 +13,13 @@ public class Deck implements Serializable {
     }
 
     public void shuffle() { //사용한 카드를 다시 덱에 넣어서 shuffle
-
+        for(int i = 51; i > 0; i--){
+            int rand = (int)(Math.random()*(i+1));
+            Card temp = deck[i];
+            deck[i] = deck[rand];
+            deck[rand] = temp;
+        }
+        cardsUsed = 0;  //카드를 모두 사용하고 셔플을 하기 때문에 cardUsed를 0으로 초기화
     }
 
     public int cardsLeft() {
