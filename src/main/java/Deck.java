@@ -23,4 +23,9 @@ public class Deck implements Serializable {
     public Card dealCard() {
         return deck[0];
     }
+
+    public String toString(){
+        return "";
+
+    }
 }
