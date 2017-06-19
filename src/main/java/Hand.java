@@ -37,10 +37,40 @@ public class Hand {
     }
 
     public void sortBySuit() {
+        //Sorts the cards
+        Vector newHand = new Vector();
+        while(hand.size()>0){
+
+            int pos = 0;
+            Card c = (Card)hand.elementAt(0);
+
+            for(int i = 1; i< hand.size(); i++){
+                Card c1 = (Card)hand.elementAt(i);
+                if ( c1.getSuit() < c.getSuit() ||
+                        (c1.getSuit() == c.getSuit() && c1.getValue() < c.getValue()) ){
+                    pos = i;
+                    c = c1;
+                }
+            }
+            hand.remove(pos);
+            newHand.addElement(c);
+        }
+        hand = newHand;
     }
 
     public void sortByValue() {
-
+        Vector newHand = new Vector();
+        while(hand.size() > 0){
+            int pos = 0;
+            Card c = (Card)hand.elementAt(0);
+            for(int i = 1; i < hand.size(); i++){
+                Card c1 = (Card)hand.elementAt(i);
+                if(c1.getValue() < c.getValue()){
+                    pos = i;
+                    c = c1;
+                }
+            }
+        }
     }
 
     public String toString() {
