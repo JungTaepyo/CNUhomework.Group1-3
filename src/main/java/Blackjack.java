@@ -209,12 +209,22 @@ public class Blackjack implements Serializable {
             } else if (userAction == 2) {
                 // Loop ends; user is done taking cards.
                 break;
+            }else { // userAction is 'H'. Give the user a card.
+                // If the user goes over 21, the user loses.
+                Card newCard = deck.dealCard();
+                userHand.addCard(newCard);
+                System.out.println();
+                System.out.println("User hits.");
+                System.out.println("Your card is the " + newCard);
+                System.out.println("Your total is now " + userHand.getBlackjackValue());
+                if (userHand.getBlackjackValue() > 21) {
+                    System.out.println();
+                    System.out.println("You busted by going over 21.  You lose.");
+                    System.out.println("Dealer's other card was the " + dealerHand.getCard(1));
+                    return false;
+                }
             }
-
-
-
-            break;
-        }
+        }   //end while loop
         return true;
     }
 
