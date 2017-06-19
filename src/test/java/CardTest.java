@@ -27,6 +27,6 @@ public class CardTest {
 
     @Test
     public void getSuitAsString_테스트(){
-        
+        assertThat(firstCard.getSuitAsString()== "Heart");
     }
 }
