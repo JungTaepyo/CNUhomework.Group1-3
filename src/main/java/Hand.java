@@ -45,7 +45,8 @@ public class Hand {
                 Card c1 = (Card)hand.elementAt(i);
                 if ( c1.getSuit() < c.getSuit() ||
                         (c1.getSuit() == c.getSuit() && c1.getValue() < c.getValue()) ){
-                    
+                    pos = i;
+                    c = c1;
                 }
             }
         }
