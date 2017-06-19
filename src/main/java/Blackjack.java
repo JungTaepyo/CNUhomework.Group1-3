@@ -1,3 +1,5 @@
+import org.codehaus.groovy.runtime.powerassert.SourceText;
+
 import java.io.*;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -17,33 +19,44 @@ public class Blackjack implements Serializable {
         int bet; // Amount user bets on a game.
         boolean userWins; // Did the user win the game?
 
-        System.out.println("Welcome to the game of blackjack.");
+        System.out.println("블랙잭 게임을 시작합니다.");
         System.out.println();
 
         String scannedToken;// 입력받은 string을 저장하는 변수
-        System.out.println("저장한 게임을 불러오겠습니까?");
-        System.out.println("새 게임시작(0), 불러오기(1)");
-
-        System.out.println("How many dollars do you want to bet?  (Enter 0 to end.)");
-
-        System.out.println("! Error: 입력이 잘못 되었습니다 ");
-        System.out.println("! 새로운 카드를 처음부터 재배포합니다");
-
-        System.out.println();
-        System.out.println("! Warning : You have reached maximum money to won");
-        System.out.println();
-        System.out.println("***********************************************");
-        System.out.println("*! congratulation!! you have broke the dealer!!*");
-        System.out.println("***********************************************");
-        System.out.println();
-        System.out.println("You leave with $" + Integer.MAX_VALUE + '.');
 
         while (true) {
-            System.out.println("You have " + money + " dollars.");
-            return;
+            int userInput = -1;
+            System.out.println("저장된 게임을 불러오시겠습니까?");
+            System.out.println("새 게임시작(0), 불러오기(1)");
+            scannedToken = scan.next();
+
+
+            try {
+                userInput = Integer.parseInt((scannedToken));
+            } catch (NumberFormatException e) {
+                // 입력받은 문자열이 정수가 아닌 경우
+            }
+
+            if (userInput != 0 && userInput != 1) {
+                System.out.println("!Error: 0 또는 1을 입력 해야합니다. " + userInput);
+                continue;
+            } else {
+                isBackedup = (userInput != 0);
+                break;
+            }
         }
 
-    } // end main()
+        if(isBackedup){
+            try{
+
+            }catch (Exception e) {
+
+            }
+                money = 100;
+            }
+
+        }
+    }
 
     static boolean playBlackjack(Backup getBackup, boolean isBackuped) throws InputMismatchException {
         return true;
