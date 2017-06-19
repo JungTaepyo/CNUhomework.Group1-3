@@ -9,4 +9,8 @@ public class Hand {
     public Hand(){
         hand = new Vector();
     }
+
+    public void clear() {
+        hand.removeAllElements();
+    }
 }
