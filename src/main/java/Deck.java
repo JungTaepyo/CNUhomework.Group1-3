@@ -31,7 +31,8 @@ public class Deck implements Serializable {
     }
 
     public int cardsLeft() {
-        return cardsUsed;
+
+        return 52 - cardsUsed; // How many cards are left
     }
 
     public Card dealCard() {
