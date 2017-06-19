@@ -42,4 +42,9 @@ public class Hand {
     public void sortByValue() {
 
     }
+
+    public String toString(){
+        return "";
+
+    }
 }
