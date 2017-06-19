@@ -28,14 +28,14 @@ public class Card implements Serializable {
         // value에 맞는 integer 리턴
         return value;
     }
-    public String getSuitAsString() {
+    public String getSuitAsString() { //----------Edited----------//
         return "Spades";
     }
-    public String getValueAsString() {
+    public String getValueAsString() { //----------Edited----------//
         return "10";
     }
     public String toString() {
         return getValueAsString() + " of " + getSuitAsString();
     }
 
-}
+}  // end class Card
