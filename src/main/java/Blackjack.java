@@ -15,9 +15,9 @@ public class Blackjack implements Serializable {
         Backup backup = new Backup();// backup objects
         boolean isBackedup = false;// 저장된 게임인지 새로운 게임인지 저장
         Scanner scan = new Scanner(System.in);
-        int money = 100; // Amount of money the user has.
-        int bet; // Amount user bets on a game.
-        boolean userWins; // Did the user win the game?
+        int money = 100; // 처음 돈 초기화
+        int bet; // 베팅 금액
+        boolean userWins; // 얼마나 이겼는지 확인
 
         System.out.println("블랙잭 게임을 시작합니다.");
         System.out.println();
