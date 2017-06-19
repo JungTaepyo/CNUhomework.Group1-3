@@ -23,7 +23,6 @@ public class Blackjack implements Serializable {
         System.out.println();
 
         String scannedToken;// 입력받은 string을 저장하는 변수
-
         while (true) {
             int userInput = -1;
             System.out.println("저장된 게임을 불러오시겠습니까?");
