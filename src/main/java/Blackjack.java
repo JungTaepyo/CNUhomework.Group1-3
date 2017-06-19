@@ -171,6 +171,13 @@ public class Blackjack implements Serializable {
             System.out.println("You are BlackJack, You win");
             return true;
         }
+
+        while(true){
+            Scanner scan = new Scanner(System.in);
+
+
+            break;
+        }
         return true;
     }
 }
