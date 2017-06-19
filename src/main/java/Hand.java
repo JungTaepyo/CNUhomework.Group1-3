@@ -13,4 +13,9 @@ public class Hand {
     public void clear() {
         hand.removeAllElements();
     }
+
+    public void addCard(Card c) {
+        if (c != null)
+            hand.addElement(c);
+    }
 }
