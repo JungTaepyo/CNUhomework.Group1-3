@@ -26,4 +26,8 @@ public class Card implements Serializable {
     public int getValue() {
         return value;
     }
+    public String getSuitAsString() {
+        return "Spades";
+    }
+    
 }
