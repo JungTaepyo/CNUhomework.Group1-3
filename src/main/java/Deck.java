@@ -5,7 +5,7 @@ import java.io.Serializable;
  */
 public class Deck implements Serializable {
     private Card[] deck;
-    private int cardsUsed;
+    private int cardsUsed;//Card used in game, when cards reach to 52 we need to shuffle
 
     public Deck() {
         // create unshuffled cards deck
@@ -34,12 +34,14 @@ public class Deck implements Serializable {
         return cardsUsed;
     }
 
+    //
     public Card dealCard() {
+        // 덱에서 카드 하나를 리턴하는 함수
+
         return deck[0];
     }
 
     public String toString(){
         return "";
-
     }
 }
