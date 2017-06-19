@@ -42,6 +42,7 @@ public class Hand {
             int pos = 0;
             Card c = (Card)hand.elementAt(0);
             for(int i = 1; i< hand.size(); i++){
+                Card c1 = (Card)hand.elementAt(i);
                 
             }
         }
