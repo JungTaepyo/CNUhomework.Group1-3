@@ -38,7 +38,13 @@ public class Deck implements Serializable {
     //
     public Card dealCard() {
         // 덱에서 카드 하나를 리턴하는 함수
-
+        //shuffle
+        for(int count = 51; count>0; count--){
+            int randomNumber = (int)(Math.random()*(count+1));
+            Card temp = deck[count];
+            deck[count] = deck[randomNumber];
+            deck[randomNumber] =temp;
+        }
         return deck[0];
     }
 
