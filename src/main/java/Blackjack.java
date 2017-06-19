@@ -141,6 +141,43 @@ public class Blackjack implements Serializable {
 
 
     static boolean playBlackjack(Backup getBackup, boolean isBackuped) throws InputMismatchException {
+        Deck deck;
+        BlackjackHand dealerHand;
+        BlackjackHand userHand;
+
+        if(isBackuped){
+            deck = getBackup.storedDeck;
+            dealerHand = getBackup.storedDealerHand;
+            userHand = getBackup.storedUserHand;
+        }
+        else{
+            deck = new Deck();
+            dealerHand = new BlackjackHand();
+            userHand = new BlackjackHand();
+            deck.shuffle();
+        }
+        dealerHand.addCard(deck.dealCard());
+        dealerHand.addCard(deck.dealCard());
+        userHand.addCard(deck.dealCard());
+        userHand.addCard(deck.dealCard());
+
+        if(dealerHand.getBlackjackValue() == 21){
+
+            System.out.println("Dealer is BlackJack, Dealer win");
+            return false;
+        }
+        if(userHand.getBlackjackValue() == 21){
+
+            System.out.println("You are BlackJack, You win");
+            return true;
+        }
+
+        while(true){
+            Scanner scan = new Scanner(System.in);
+
+
+            break;
+        }
         return true;
     }
 }
