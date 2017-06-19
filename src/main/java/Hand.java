@@ -49,7 +49,8 @@ public class Hand {
                     c = c1;
                 }
             }
-            hand.remove(pos);
+            hand.remove(c);
+            newHand.addElement(c);
         }
     }
 
