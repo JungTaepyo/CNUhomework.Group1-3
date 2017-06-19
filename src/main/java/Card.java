@@ -28,8 +28,20 @@ public class Card implements Serializable {
         // value에 맞는 integer 리턴
         return value;
     }
-    public String getSuitAsString() { //----------Edited----------//
-        return "Spades";
+    public String getSuitAsString() {
+        //----------Edited----------//
+        switch (suit){
+            case SPADES:
+                return "Spades";
+            case HEARTS:
+                return "Hearts";
+            case DIAMONDS:
+                return "Diamonds";
+            case CLUBS:
+                return "Clubs";
+            default:
+                return null;
+        }
     }
     public String getValueAsString() { //----------Edited----------//
         return "10";
