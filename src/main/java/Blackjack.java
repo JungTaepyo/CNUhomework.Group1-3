@@ -24,18 +24,26 @@ public class Blackjack implements Serializable {
 
         String scannedToken;// 입력받은 string을 저장하는 변수
 
-        while(true) {
+        while (true) {
             int userInput = -1;
             System.out.println("저장된 게임을 불러오시겠습니까?");
             System.out.println("새 게임시작(0), 불러오기(1)");
             scannedToken = scan.next();
-        }
-        try {
-            
-        }catch(NumberFormatException e) {
-        }
-        }
 
+
+            try {
+                userInput = Integer.parseInt((scannedToken));
+            } catch (NumberFormatException e) {
+                // 입력받은 문자열이 정수가 아닌 경우
+            }
+
+            if (userInput != 0 && userInput != 1) {
+            } else {
+                isBackedup = (userInput != 0);
+                break;
+            }
+
+        }
     }
 
     static boolean playBlackjack(Backup getBackup, boolean isBackuped) throws InputMismatchException {
