@@ -19,7 +19,7 @@ public class Deck implements Serializable {
             deck[i] = deck[random];
             deck[random] = temp;
         }
-        cardsUsed = 0;
+        cardsUsed = 0;  //카드를 모두 사용하고 셔플을 하기 때문에 cardUsed를 0으로 초기화
     }
 
     public int cardsLeft() {
