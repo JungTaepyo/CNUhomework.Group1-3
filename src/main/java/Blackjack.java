@@ -37,18 +37,18 @@ public class Blackjack implements Serializable {
                 // 입력받은 문자열이 정수가 아닌 경우
             }
 
-            if (userInput != 0 && userInput != 1) {
+            if (userInput != 0 && userInput != 1) { // 두 번째 if문
                 System.out.println("!Error: 0 또는 1을 입력 해야합니다. " + userInput);
-                continue;
+                continue; // 계속
             } else {
                 isBackedup = (userInput != 0);
-                break;
+                break; // while문 탈출
             }
         }
 
-        if(isBackedup) {
+        if (isBackedup) {
             try {
-                FileInputStream fis = new FileInputStream("BackupFile");
+                FileInputStream fis = new FileInputStream("BackupFile"); //파일 불러오기
                 ObjectInputStream ois = new ObjectInputStream(fis);
                 backup = (Backup) ois.readObject();
                 ois.close();
@@ -59,12 +59,13 @@ public class Blackjack implements Serializable {
                 e.printStackTrace();
             }
             money = backup.storedMoney;
-        }else{
+        } else {
             money = 100;
-            }
-
         }
+
     }
+
+
 
     static boolean playBlackjack(Backup getBackup, boolean isBackuped) throws InputMismatchException {
         return true;
