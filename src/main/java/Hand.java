@@ -50,7 +50,7 @@ public class Hand {
                 }
             }
             hand.remove(c);
-            newHand.addElement(c);
+            newHand.addElement(pos);
         }
     }
 
