@@ -22,4 +22,9 @@ public class Hand {
     public void removeCard(Card c) {
         hand.removeElement(c);
     }
+
+    public void removeCard(int position) {
+        if (position >= 0 && position < hand.size())
+            hand.removeElementAt(position);
+    }
 }
