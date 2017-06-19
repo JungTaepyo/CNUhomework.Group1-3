@@ -12,8 +12,9 @@ public class Deck implements Serializable {
         deck = new Card[52];
         int cardCount = 0; // Cards that have been used
         for(int suit = 0; suit <= 3; suit++){ // Create each Suits
-            for(int value = 0; value <= 13; value++){
-
+            for(int value = 0; value <= 13; value++){ // Create each Values
+                deck[cardCount] = new Card(suit, value); // Create each suit and set the value
+                cardCount++;
             }
         }
 
