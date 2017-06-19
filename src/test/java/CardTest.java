@@ -38,6 +38,7 @@ public class CardTest {
 
     @Test
     public void getValueAsString_테스트(){
+        assertThat(firstCard.getValueAsString()=="1");
     }
 
 
