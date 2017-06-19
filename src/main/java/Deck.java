@@ -39,9 +39,8 @@ public class Deck implements Serializable {
     public Card dealCard() {
         // 덱에서 카드 하나를 리턴하는 함수
         //shuffle
-        if(cardsUsed == 52){
+        if(cardsUsed == 52)
             shuffle();
-        }
         cardsUsed++;
         return deck[cardsUsed -1];
     }
