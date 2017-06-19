@@ -125,7 +125,13 @@ public class Blackjack implements Serializable {
                 }
             else
                 money = money - bet;
-
+            //백업 및 money 0일 때 종료
+            backup.storedMoney = money;
+            System.out.println();
+            if (money == 0) {
+                System.out.println("Looks like you've are out of money!");
+                break;
+            }
         }
 
     }
