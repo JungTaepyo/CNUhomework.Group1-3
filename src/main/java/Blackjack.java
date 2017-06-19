@@ -132,6 +132,6 @@ public class Blackjack implements Serializable {
 
 
     static boolean playBlackjack(Backup getBackup, boolean isBackuped) throws InputMismatchException {
-
+        return true;
     }
 }

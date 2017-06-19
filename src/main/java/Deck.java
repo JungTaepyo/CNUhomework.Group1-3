@@ -12,8 +12,8 @@ public class Deck implements Serializable {
         deck = new Card[52];
         int cardCount = 0; // Cards that have been used
         for(int suit = 0; suit <= 3; suit++){ // Create each Suits
-            for(int value = 0; value <= 13; value++){ // Create each Values
-                deck[cardCount] = new Card(suit, value); // Create each suit and set the value
+            for(int value = 1; value <= 13; value++){ // Create each Values
+                deck[cardCount] = new Card(value, suit); // Create each suit and set the value
                 cardCount++; // set next index
             }
         }
@@ -38,14 +38,11 @@ public class Deck implements Serializable {
     //
     public Card dealCard() {
         // 덱에서 카드 하나를 리턴하는 함수
-        Card returnCard = null;
         //shuffle
-        if(cardsUsed == 52){
+        if(cardsUsed == 52)
             shuffle();
-        }
         cardsUsed++;
-        returnCard=deck[cardsUsed -1];
-        return returnCard;
+        return deck[cardsUsed -1];
     }
 
     public String toString(){
