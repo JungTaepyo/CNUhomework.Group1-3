@@ -33,5 +33,12 @@ public class CardTest {
     @Test
     public void getValueAsString_초기값테스트(){
         assertThat(firstCard.getValueAsString()=="10");
+        //do not use this test method again, it will not work
     }
+
+    @Test
+    public void getValueAsString_테스트(){
+    }
+
+
 }
