@@ -39,10 +39,14 @@ public class Blackjack implements Serializable {
 
             if (userInput != 0 && userInput != 1) {
                 System.out.println("!Error: 0 또는 1을 입력 해야합니다. " + userInput);
+                continue;
             } else {
                 isBackedup = (userInput != 0);
                 break;
             }
+        }
+
+        
 
         }
     }
