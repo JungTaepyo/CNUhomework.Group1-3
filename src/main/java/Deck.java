@@ -12,7 +12,9 @@ public class Deck implements Serializable {
         deck = new Card[52];
         int cardCount = 0; // 카드를 추가할때마다 증가
         for(int suit = 0; suit <= 3; suit++){
-            
+            for(int value = 0; value <= 13; value++){
+
+            }
         }
 
 
