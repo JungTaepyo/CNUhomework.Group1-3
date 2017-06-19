@@ -27,4 +27,8 @@ public class Hand {
         if (position >= 0 && position < hand.size())
             hand.removeElementAt(position);
     }
+
+    public int getCardCount() {
+        return hand.size();
+    }
 }
