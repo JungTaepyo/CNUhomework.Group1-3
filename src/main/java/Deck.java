@@ -38,7 +38,7 @@ public class Deck implements Serializable {
     //
     public Card dealCard() {
         // 덱에서 카드 하나를 리턴하는 함수
-        String card = null;
+        Card returnCard = null;
         //shuffle
         for(int count = 51; count>0; count--){
             int randomNumber = (int)(Math.random()*(count+1));
@@ -46,7 +46,8 @@ public class Deck implements Serializable {
             deck[count] = deck[randomNumber];
             deck[randomNumber] =temp;
         }
-        return deck[0];
+        returnCard=deck[cardsUsed -1];
+        return returnCard;
     }
 
     public String toString(){
