@@ -22,9 +22,8 @@ public class BlackjackHand extends Hand implements Serializable {
                 cardVal = 10;// jack, queen, king일 경우
             value = value + cardVal;
         }
-        if (ace == true) {
-            value = 1;
-        }
+        if (ace == true && value + 10 <= 21)
+            value += 10;
         return value;
 
     }
