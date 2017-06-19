@@ -18,4 +18,8 @@ public class Hand {
         if (c != null)
             hand.addElement(c);
     }
+
+    public void removeCard(Card c) {
+        hand.removeElement(c);
+    }
 }
