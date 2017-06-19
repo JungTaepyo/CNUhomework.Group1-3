@@ -162,14 +162,12 @@ public class Blackjack implements Serializable {
         userHand.addCard(deck.dealCard());
 
         if(dealerHand.getBlackjackValue() == 21){
-            System.out.println("Dealer has the "+ dealerHand.getCard(0) +" and the "+dealerHand.getCard(1));
-            System.out.println("User has the "+ userHand.getCard(0) +" and the "+userHand.getCard(1));
+            Info(dealerHand,userHand);
             System.out.println("Dealer is BlackJack, Dealer win");
             return false;
         }
         if(userHand.getBlackjackValue() == 21){
-            System.out.println("Dealer has the "+ dealerHand.getCard(0) +" and the "+dealerHand.getCard(1));
-            System.out.println("User has the "+ userHand.getCard(0) +" and the "+userHand.getCard(1));
+            Info(dealerHand,userHand);
             System.out.println("You are BlackJack, You win");
             return true;
         }
@@ -201,5 +199,10 @@ public class Blackjack implements Serializable {
             break;
         }
         return true;
+    }
+
+    static void Info(BlackjackHand dealerHand, BlackjackHand userHand){
+        System.out.println("Dealer has the "+ dealerHand.getCard(0) +" and the "+dealerHand.getCard(1));
+        System.out.println("User has the "+ userHand.getCard(0) +" and the "+userHand.getCard(1));
     }
 }
