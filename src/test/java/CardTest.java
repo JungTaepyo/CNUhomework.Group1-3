@@ -43,6 +43,7 @@ public class CardTest {
 
     @Test
     public void toString_테스트(){
+        assertThat(firstCard.toString() == "ACE of Heart");
     }
 
 
