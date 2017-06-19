@@ -52,10 +52,13 @@ public class Deck implements Serializable {
     }
 
     public String toString(){
+
         return "";
     }
 
-//    public Card getCard(int index){
-//        return deck[index];
-//    }
+
+    public Card getCard(int index){ // get the requested card from the deck
+
+        return deck[index];
+    }
 }
