@@ -189,14 +189,82 @@ public class Blackjack implements Serializable {
                     System.out.println("Please respond 1, 2 or 3");
                 }
             }while(userAction != 1 && userAction != 2 && userAction != 3);
+            if (userAction == 3) {                  //if userAction ==3,
+                getBackup.storedDealerHand = dealerHand;
+                getBackup.storedUserHand = userHand;
+                getBackup.storedDeck = deck;
+                try {
+                    FileOutputStream fos = new FileOutputStream("BackupFile");
+                    ObjectOutputStream oos = new ObjectOutputStream(fos);
+                    oos.writeObject(getBackup);
+                    oos.close();
+                    fos.close();
+                    System.out.println("!알림: 게임이 저장되었습니다.");
+                    System.out.println("저장된 당신의 돈  : $" + getBackup.storedMoney + '.');
+                } catch (Exception e) {
+                    System.out.println("!Fetal Error: File out failed");
+                }
+                System.exit(0);
 
+            } else if (userAction == 2) {
+                // Loop ends; user is done taking cards.
+                break;
+            }else { // userAction is 'H'. Give the user a card.
+                // If the user goes over 21, the user loses.
+                Card newCard = deck.dealCard();
+                userHand.addCard(newCard);
+                System.out.println();
+                System.out.println("User hits.");
+                System.out.println("Your card is the " + newCard);
+                System.out.println("Your total is now " + userHand.getBlackjackValue());
+                if (userHand.getBlackjackValue() > 21) {
+                    System.out.println();
+                    System.out.println("You busted by going over 21.  You lose.");
+                    System.out.println("Dealer's other card was the " + dealerHand.getCard(1));
+                    return false;
+                }
+            }
+        }   //end while loop
+        /*
+		 * If we get to this point, the user has Stood with 21 or less. Now,
+		 * it's the dealer's chance to draw. Dealer draws cards until the
+		 * dealer's total is > 16. If dealer goes over 21, the dealer loses.
+		 */
+        System.out.println();
+        System.out.println("User stands.");
+        System.out.println("Dealer's cards are");
+        System.out.println("    " + dealerHand.getCard(0));
+        System.out.println("    " + dealerHand.getCard(1));
 
-
-
-            break;
+        while (dealerHand.getBlackjackValue() <= 16) {
+            Card newCard = deck.dealCard();
+            System.out.println("Dealer hits and gets the " + newCard);
+            dealerHand.addCard(newCard);
+            if (dealerHand.getBlackjackValue() > 21) {
+                System.out.println();
+                System.out.println("Dealer busted by going over 21.  You win.");
+                return true;
+            }
         }
-        return true;
-    }
+        System.out.println("Dealer's total is " + dealerHand.getBlackjackValue());
+        /*
+		 * If we get to this point, both players have 21 or less. We can
+		 * determine the winner by comparing the values of their hands.
+		 */
+        System.out.println();
+        if (dealerHand.getBlackjackValue() == userHand.getBlackjackValue()) {
+            System.out.println("Dealer wins on a tie.  You lose.");
+            return false;
+        } else if (dealerHand.getBlackjackValue() > userHand.getBlackjackValue()) {
+            System.out.println("Dealer wins, " + dealerHand.getBlackjackValue() + " points to "
+                    + userHand.getBlackjackValue() + ".");
+            return false;
+        }else {
+            System.out.println(
+                    "You win, " + userHand.getBlackjackValue() + " points to " + dealerHand.getBlackjackValue() + ".");
+            return true;
+        }
+    }      //end  playBlackJack()
 
     private static void DealCard(BlackjackHand dealerHand, BlackjackHand userHand,Deck deck) {
         dealerHand.addCard(deck.dealCard());
