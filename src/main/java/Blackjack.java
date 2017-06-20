@@ -50,7 +50,7 @@ public class Blackjack implements Serializable {
 
         if (isBackedup) {
             try {
-                FileInputStream fis = new FileInputStream("BackupFile"); //파일 불러오기
+                FileInputStream fis = new FileInputStream("src/BackupFile"); //파일 불러오기
                 ObjectInputStream ois = new ObjectInputStream(fis);
                 backup = (Backup) ois.readObject();
                 ois.close();
@@ -194,7 +194,7 @@ public class Blackjack implements Serializable {
                 getBackup.storedUserHand = userHand;
                 getBackup.storedDeck = deck;
                 try {
-                    FileOutputStream fos = new FileOutputStream("BackupFile");
+                    FileOutputStream fos = new FileOutputStream("src/BackupFile");
                     ObjectOutputStream oos = new ObjectOutputStream(fos);
                     oos.writeObject(getBackup);
                     oos.close();
